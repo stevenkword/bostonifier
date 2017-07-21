@@ -1,10 +1,9 @@
-=== Hello Beantown ===
-Contributors: (this should be a list of wordpress.org userid's)
-Donate link: http://example.com/
-Tags: comments, spam
+=== Bostonifier ===
+Contributors: stevenkword
+Tags: Boston, translation, en_ma
 Requires at least: 4.4
 Tested up to: 4.7.3
-Stable tag: 0.1.0
+Stable tag: 0.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
