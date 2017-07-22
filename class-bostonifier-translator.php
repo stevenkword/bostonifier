@@ -2,6 +2,8 @@
 /**
  * Bostonifier_Translator class
  *
+ * Translates English to Boston-speak.
+ *
  * @package Bostonifier
  */
 
