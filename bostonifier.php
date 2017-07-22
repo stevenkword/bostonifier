@@ -19,4 +19,4 @@
  */
 
 require_once( __DIR__ . '/class-bostonifier-translator.php' );
-//require_once( __DIR__ . '/class-bostonifier-rest-widget.php' );
+require_once( __DIR__ . '/class-bostonifier-rest-widget.php' );
