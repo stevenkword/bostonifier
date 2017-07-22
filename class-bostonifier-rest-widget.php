@@ -2,7 +2,7 @@
 /**
  * Bostonifier_REST_Widget class
  *
- * Adds a Widget that Pulls from WCBoston's website. 
+ * Adds a Widget that Pulls from WCBoston's website.
  *
  * @package Bostonifier
  */
