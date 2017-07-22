@@ -26,6 +26,13 @@ class BostonifierTranslatorTest extends WP_UnitTestCase {
 		$this->assertEquals( $expected, $actual );
 	}
 
+	function test_ar_ending() {
+		$input = 'car';
+		$expected = 'cah';
+		$actual = $this->translator->translate_ar_word_endings( $input );
+		$this->assertEquals( $expected, $actual );
+	}
+
 	function test_awesome_to_wicked_cool() {
 		$input = 'awesome';
 		$expected = 'wicked cool';

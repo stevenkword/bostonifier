@@ -28,7 +28,7 @@ class Bostonifier_Translator {
 	 */
 	public static function instance() {
 		if ( ! self::$instance ) {
-			self::$instance = new self;
+			self::$instance = new Bostonifier_Translator();
 		}
 		return self::$instance;
 	}
@@ -51,6 +51,19 @@ class Bostonifier_Translator {
 	 */
 	function translate_er_word_endings( $input ) {
 		$output = str_replace( 'er', 'ah', $input );
+		return $output;
+	}
+
+	/**
+	 * Translates words ending with "ar" to "ah".
+	 *
+	 * E.g.) "Car" to "Cah"
+	 *
+	 * @param string $input Input string to be translated.
+	 * @return string The translated input
+	 */
+	function translate_ar_word_endings( $input ) {
+		$output = str_replace( 'ar', 'ah', $input );
 		return $output;
 	}
 
@@ -102,6 +115,7 @@ class Bostonifier_Translator {
 		try {
 			$translated = $original;
 			$translated = $this->translate_er_word_endings( $translated );
+			$translated = $this->translate_ar_word_endings( $translated );
 			$translated = $this->translate_awesome_to_wicked_cool( $translated );
 			$translated = $this->translate_revert_blacklist( $translated );
 		} catch ( \Exception $e ) {
