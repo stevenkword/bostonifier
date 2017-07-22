@@ -1,18 +1,36 @@
 <?php
 /**
- * Bostonifier class
+ * Bostonifier_REST_Widget class
  *
  * @package Bostonifier
  */
 
 /**
- * Class Bostonifier
- * Adds rest_widget widget.
+ * Class Bostonifier REST Widget
+ *
+ * Translates English to Boston-speak.
  */
 class Bostonifier_REST_Widget extends WP_Widget {
 
+	/**
+	 * Bostonifier rest endpoint
+	 *
+	 * @var rest_url
+	 */
 	public $rest_url;
+
+	/**
+	 * Bostonifier cache group
+	 *
+	 * @var cache_group
+	 */
 	public $cache_group = 'rest_widget';
+
+	/**
+	 * Bostonifier cache life (seconds)
+	 *
+	 * @var instance
+	 */
 	public $cache_life = 30;
 
 	/**
@@ -20,11 +38,11 @@ class Bostonifier_REST_Widget extends WP_Widget {
 	 */
 	function __construct() {
 		parent::__construct(
-			'rest_widget', // Base ID
-			esc_html__( 'Bostonifier Widget', 'text_domain' ), // Name
+			'rest_widget', // Base ID.
+			esc_html__( 'Bostonifier Widget', 'text_domain' ), // Name.
 			array(
 				'description' => esc_html__( 'A REST Widget', 'text_domain' ),
-			) // Args
+			) // Args.
 		);
 	}
 
@@ -38,21 +56,21 @@ class Bostonifier_REST_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		$this->rest_url	= $instance['title'];
-		echo $args['before_widget'];
+		echo esc_html( $args['before_widget'] );
 		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+			echo esc_html( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'] );
 		}
 
 		$route = '/wp-json/wp/v2/posts';
 		$response = wp_cache_get( $route, $this->cache_group );
 
 		if ( ! $response ) {
-			$response = wp_remote_get( $this->rest_url . $route );
+			$response = wp_safe_remote_get( $this->rest_url . $route );
 			wp_cache_set( $this->rest_url . $route, $response, $this->cache_group, $this->cache_life );
 		}
 
 		if ( is_wp_error( $response ) ) {
-			echo '<ul>Could not reach host</ul>';
+			echo esc_html( '<ul>Could not reach host</ul>' );
 			return;
 		}
 
@@ -60,13 +78,13 @@ class Bostonifier_REST_Widget extends WP_Widget {
 
 		echo '<ul>';
 		foreach ( $data as $post ) {
-			echo '<li><a href="' . esc_url( $post->link ) . '" target="_blank">' . $post->title->rendered . '</a>
-			<br/>' . $post->excerpt->rendered . '</li>';
+			echo esc_html( '<li><a href="' . esc_url( $post->link ) . '" target="_blank">' . $post->title->rendered . '</a>
+			<br/>' . $post->excerpt->rendered . '</li>' );
 
 		}
 		echo '</ul>';
 
-		echo $args['after_widget'];
+		echo esc_html( $args['after_widget'] );
 	}
 
 	/**
@@ -104,7 +122,9 @@ class Bostonifier_REST_Widget extends WP_Widget {
 	}
 } // class rest_widget
 
-// register rest_widget widget
+/**
+ * Register rest_widget widget
+ */
 function register_rest_widget() {
 		register_widget( 'Bostonifier_REST_Widget' );
 }
