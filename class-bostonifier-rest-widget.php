@@ -55,7 +55,7 @@ class Bostonifier_REST_Widget extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-		$this->rest_url	= $instance['title'];
+		$this->rest_url = $instance['title'];
 		echo esc_html( $args['before_widget'] );
 		if ( ! empty( $instance['title'] ) ) {
 			echo esc_html( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'] );

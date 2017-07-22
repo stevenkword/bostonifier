@@ -11,6 +11,10 @@ class BostonifierTranslatorTest extends WP_UnitTestCase {
 		$this->translator = Bostonifier_Translator::instance();
 	}
 
+	function test_fail_test() {
+		$this->assertTrue( false );
+	}
+
 	function test_er_ending() {
 		$input = 'corner';
 		$expected = 'cornah';
