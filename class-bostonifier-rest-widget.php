@@ -58,9 +58,9 @@ class Bostonifier_REST_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		$this->rest_url = $instance['title'];
-		echo esc_html( $args['before_widget'] );
+		echo ( $args['before_widget'] );
 		if ( ! empty( $instance['title'] ) ) {
-			echo esc_html( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'] );
+			echo ( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'] );
 		}
 
 		$route = '/wp-json/wp/v2/posts';
@@ -72,7 +72,7 @@ class Bostonifier_REST_Widget extends WP_Widget {
 		}
 
 		if ( is_wp_error( $response ) ) {
-			echo esc_html( '<ul>Could not reach host</ul>' );
+			echo ( '<ul>Could not reach host</ul>' );
 			return;
 		}
 
@@ -80,13 +80,13 @@ class Bostonifier_REST_Widget extends WP_Widget {
 
 		echo '<ul>';
 		foreach ( $data as $post ) {
-			echo esc_html( '<li><a href="' . esc_url( $post->link ) . '" target="_blank">' . $post->title->rendered . '</a>
+			echo ( '<li><a href="' . esc_url( $post->link ) . '" target="_blank">' . $post->title->rendered . '</a>
 			<br/>' . $post->excerpt->rendered . '</li>' );
 
 		}
 		echo '</ul>';
 
-		echo esc_html( $args['after_widget'] );
+		echo ( $args['after_widget'] );
 	}
 
 	/**
