@@ -15,7 +15,7 @@ This plugin was created as an example for presentation at WordCamp Boston 2017.
 
 It was scaffolded inside of VVV using WP-CLI's scaffold command.  It contains an
 example of a good testable function with a corresponding unit test. It has also been
-configured to integrate with TravisCI via this plugin's corresponding GitHub repository.
+configured to integrate with TravisCI via this plugin's GitHub repository.
 
 == Installation ==
 
