@@ -1,10 +1,6 @@
 # Bostonifier <a href="https://travis-ci.org/stevenkword/bostonifier"><img src="https://travis-ci.org/stevenkword/bostonifier.svg?branch=master"></a>
 
-This is an awesome plugin that translates English into Bostonian.
-
-== Description ==
-
-This plugin was created as an example for presentation at WordCamp Boston 2017.
+This is an awesome plugin that translates English into Bostonian. It was created as an example for presentation at WordCamp Boston 2017.
 
 It was scaffolded inside of VVV using WP-CLI's scaffold command.  It contains an
 example of a good testable function with a corresponding unit test. It has also been
