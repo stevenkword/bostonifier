@@ -1,4 +1,7 @@
 # Bostonifier <a href="https://travis-ci.org/stevenkword/bostonifier"><img src="https://travis-ci.org/stevenkword/bostonifier.svg?branch=master"></a>
+
+The results of the automated tests running with TravisCI can be seen above.
+
 **Contributors:** [stevenkword](https://profiles.wordpress.org/stevenkword)
 **Tags:** Boston, translation, en_ma
 **Requires at least:** 3.5  
