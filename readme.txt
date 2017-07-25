@@ -1,13 +1,13 @@
 === Bostonifier ===
 Contributors: stevenkword
-Tags: Boston, translation, en_ma
+Tags: Boston, Bostonian, accent, translation
 Requires at least: 4.4
-Tested up to: 4.7.3
-Stable tag: 0.1.2
+Tested up to: 4.8
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This is an awesome plugin that translates American English into Bostonian.
+This is an awesome plugin that translates English into Bostonian.
 
 == Description ==
 
@@ -24,4 +24,4 @@ Simply activate and get wicked smaht
 == Changelog ==
 
 = 1.0 =
-* Initial vahsion
+* Initial version
