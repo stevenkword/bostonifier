@@ -58,9 +58,9 @@ class Bostonifier_REST_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		$this->rest_url = $instance['title'];
-		echo ( $args['before_widget'] );
+		echo esc_html( $args['before_widget'] );
 		if ( ! empty( $instance['title'] ) ) {
-			echo ( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'] );
+			echo esc_html( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'] );
 		}
 
 		$route = '/wp-json/wp/v2/posts';
@@ -80,13 +80,13 @@ class Bostonifier_REST_Widget extends WP_Widget {
 
 		echo '<ul>';
 		foreach ( $data as $post ) {
-			echo ( '<li><a href="' . esc_url( $post->link ) . '" target="_blank">' . $post->title->rendered . '</a>
+			echo esc_html( '<li><a href="' . esc_url( $post->link ) . '" target="_blank">' . $post->title->rendered . '</a>
 			<br/>' . $post->excerpt->rendered . '</li>' );
 
 		}
 		echo '</ul>';
 
-		echo ( $args['after_widget'] );
+		echo esc_html( $args['after_widget'] );
 	}
 
 	/**

@@ -94,7 +94,7 @@ class Bostonifier_Translator {
 			'Vahsion' => 'Version',
 			'ahy' => 'ery',
 			'ahah' => 'erah',
-			'sahvah' => 'servah',
+			'sahvah' => 'servah',  
 		);
 		$output = $input;
 		foreach ( $blacklist as $oops => $correction ) {
